@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include <algorithm>
 
 std::vector<int> whole;
 std::vector<double> fraction;
@@ -20,6 +21,7 @@ void DeleteId();
 void DeleteVector();
 void SortVectorMax();
 void SortVectorMin();
+
 
 int main()
 {
@@ -63,7 +65,7 @@ void MenuVector()
 
 		system("cls");
 		std::cout << "1 - Заполнить вектор. \n2 - Убрать последний элемент вектора.\n3 - Что находится в векторе.\n4 - Вырезать элемент по значению.\n5 - Вырезать элемент по индексу."
-			<<"\n6 - Очистить вектор.\n7 - Отсортировать вектор по возрвстанию.\n8 - Отсортировать вектор по убыванию.\n0 - Вернуться.\n\nЧто будем делать : ";
+			<<"\n6 - Очистить вектор.\n7 - Отсортировать вектор по возрвстанию.\n8 - Отсортировать вектор по убыванию.\n0 - Вернуться.\n\nЧто будем делать : \n\n";
 		std::cin >> number1;
 
 		if (number1 == 0)
@@ -137,6 +139,7 @@ void FillingVector()
 	{
 		std::cout <<  "error";
 	}
+
 }
 
 void DeleteLastElements()
@@ -157,7 +160,8 @@ void DeleteLastElements()
 	{
 		std::cout << "error";
 	}
-	std::cout << "Удаление успешно";
+	std::cout << "Удаление успешно!!!\n";
+	PrintVector();
 }
 
 void PrintVector()
@@ -171,9 +175,9 @@ void PrintVector()
 		else
 		{
 			std::cout << "id\tСодержимое\n";
-			for (int i = 1; i < whole.size(); i++)
+			for (int i = 0; i < whole.size(); i++)
 			{
-				std::cout << i << "\t" << whole[i] << "\n";
+				std::cout << i + 1 << "\t" << whole[i] << "\n";
 			}
 		}
 	}
@@ -186,7 +190,7 @@ void PrintVector()
 		else
 		{
 			std::cout << "id\tСодержимое\n";
-			for (int i = 1; i < fraction.size(); i++)
+			for (int i = 0; i < fraction.size(); i++)
 			{
 				std::cout << i << "\t" << fraction[i] << "\n";
 			}
@@ -201,7 +205,7 @@ void PrintVector()
 		else
 		{
 			std::cout << "id\tСодержимое\n";
-			for (int i = 1; i < line.size(); i++)
+			for (int i = 0; i < line.size(); i++)
 			{
 				std::cout << i << "\t" << line[i] << "\n";
 			}
@@ -229,7 +233,7 @@ void DeleteValue()
 	{
 		std::cout << "Введите значение которое хотите удалить: ";
 		std::cin >> value1;
-		fraction.erase(remove(fraction.begin(), fraction.end(), value), fraction.end());
+		fraction.erase(remove(fraction.begin(), fraction.end(), value1), fraction.end());
 	}
 	else if (number == 3)
 	{
@@ -241,14 +245,34 @@ void DeleteValue()
 	{
 		std::cout << "error";
 	}
+	std::cout << "Удаление успешно!!!\n";
+	PrintVector();
 }
 
 void DeleteId()
 {
-	int number1;
+	int id;
 
 	std::cout << "\nВведите id для удаления: ";
-	std::cin >> number1;
+	std::cin >> id;
+	id++;
+	if (number == 1)
+	{
+
+	}
+	else if (number == 2)
+	{
+
+	}
+	else if (number == 3)
+	{
+		
+	}
+	else
+	{
+
+	}
+	
 
 }
 
@@ -272,5 +296,6 @@ void DeleteVector()
 	}
 	std::cout << "Удаление успешно";
 }
+
 
 
